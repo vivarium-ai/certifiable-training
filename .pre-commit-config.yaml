@@ -1,0 +1,40 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=500']
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-case-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+
+  - repo: local
+    hooks:
+      - id: cppcheck
+        name: cppcheck static analysis
+        entry: cppcheck
+        language: system
+        files: \.(c|h)$
+        args:
+          - --error-exitcode=1
+          - --enable=warning,style,performance
+          - --suppress=missingIncludeSystem
+          - --inline-suppr
+          - -I
+          - include
+
+      - id: check-copyright
+        name: check copyright headers
+        entry: python3 tools/check_copyright.py
+        language: system
+        files: \.(c|h)$
+
+      - id: check-traceability
+        name: check traceability tags
+        entry: python3 tools/check_traceability.py
+        language: system
+        files: \.(c|h)$
