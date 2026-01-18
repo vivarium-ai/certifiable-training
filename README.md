@@ -187,13 +187,18 @@ Same seed + epoch = same shuffle, every time, every platform.
 
 ## Related Projects
 
-| Project | Description | Demo |
-|---------|-------------|------|
-| [certifiable-inference](https://github.com/williamofai/certifiable-inference) | Deterministic inference engine | [inference.speytech.com](https://inference.speytech.com) |
-| **certifiable-training** | Deterministic training engine | [training.speytech.com](https://training.speytech.com) |
-| [certifiable-data](https://github.com/williamofai/certifiable-data) | Deterministic data pipeline | — |
+| Project | Description |
+|---------|-------------|
+| [certifiable-data](https://github.com/williamofai/certifiable-data) | Deterministic data pipeline |
+| [certifiable-training](https://github.com/williamofai/certifiable-training) | Deterministic training engine |
+| [certifiable-quant](https://github.com/williamofai/certifiable-quant) | Deterministic quantization |
+| [certifiable-deploy](https://github.com/williamofai/certifiable-deploy) | Deterministic model packaging |
+| [certifiable-inference](https://github.com/williamofai/certifiable-inference) | Deterministic inference engine |
 
-Together, `certifiable-data` + `certifiable-training` + `certifiable-inference` provide a complete deterministic ML pipeline for safety-critical systems.
+Together, these projects provide a complete deterministic ML pipeline for safety-critical systems:
+```
+certifiable-data → certifiable-training → certifiable-quant → certifiable-deploy → certifiable-inference
+```
 
 ## Why This Matters
 
