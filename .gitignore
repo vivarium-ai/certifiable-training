@@ -31,7 +31,6 @@
 *.pc
 
 # Build2 symlinks exes from build dir to src dir for convenient
-examples/buildfile
 examples/train_xor
 examples/verify_step
 tests/unit/test_backward
